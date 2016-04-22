@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.source_files = 'lib/include/*.{h}','lib/IJKMediaFramework.framework','lib/libPanoPlayerStatic.a','lib/include/*.{fsh,vsh}'
   s.requires_arc  = true
   s.resources = ["lib/include/*.{fsh,vsh}"]
-  s.ios.deployment_target = '6.0'
+  s.ios.deployment_target = '7.0'
   s.preserve_paths = 'lib/IJKMediaFramework.framework','lib/libPanoPlayerStatic.a'
   s.frameworks = 'CoreGraphics', 'Foundation', 'UIkit','AVFoundation','OpenGLES','QuartzCore','CoreVideo','CoreMotion', 'CoreText', 'Security', 'CFNetwork', 'AudioToolbox', 'VideoToolbox', 'CoreMedia','IJKMediaFramework','opencv2'
   s.libraries  = 'z','xml2','c++','bz2', 'iconv','PanoPlayerStatic'
