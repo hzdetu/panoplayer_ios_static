@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name = 'panoplayer_ios_static'
-  s.version = '1.0.0'
+  s.version = '1.0.1'
   s.license = 'MIT'
   s.summary = 'detu panoplayer static libaray'
   s.homepage = 'https://www.detu.com'
   s.author = { 'detu' => 'https://detu.com/' }
-  s.source = { :git => 'https://github.com/hzdetu/panoplayer_ios_static.git' , :tag => "1.0.0"}
+  s.source = { :git => 'https://github.com/hzdetu/panoplayer_ios_static.git' , :tag => "1.0.1"}
   s.platform = :ios
   s.public_header_files = 'lib/include/*.{h}'
   s.source_files = 'lib/include/*.{h}','lib/IJKMediaFramework.framework','lib/libPanoPlayerStatic.a','lib/include/*.{fsh,vsh}'
