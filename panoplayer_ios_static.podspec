@@ -13,12 +13,12 @@ Pod::Spec.new do |s|
   s.resources = ["lib/include/*.{fsh,vsh}"]
   s.ios.deployment_target = '7.0'
   s.preserve_paths = 'lib/IJKMediaFramework.framework','lib/libPanoPlayerStatic.a'
-  s.frameworks = 'CoreGraphics', 'Foundation', 'UIkit','AVFoundation','OpenGLES','QuartzCore','CoreVideo','CoreMotion', 'CoreText', 'Security', 'CFNetwork', 'AudioToolbox', 'VideoToolbox', 'CoreMedia','IJKMediaFramework'
-  s.libraries  = 'z','xml2','c++','bz2', 'iconv','PanoPlayerStatic','opencv2'
-  s.vendored_library = 'lib/libPanoPlayerStatic.a','$(PODS_ROOT)/OpenCV/opencv2.framework'
+  s.frameworks = 'CoreGraphics', 'Foundation', 'UIkit','AVFoundation','OpenGLES','QuartzCore','CoreVideo','CoreMotion', 'CoreText', 'Security', 'CFNetwork', 'AudioToolbox', 'VideoToolbox', 'CoreMedia','IJKMediaFramework','opencv2'
+  s.libraries  = 'z','xml2','c++','bz2', 'iconv','PanoPlayerStatic'
+  s.vendored_library = 'lib/libPanoPlayerStatic.a','$(PODS_ROOT)/OpenCV/'
   s.xcconfig   = { 
-  'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/panoplayer_ios_static/lib/"',
-  'HEADER_SEARCH_PATHS' => '/usr/include/libxml2 "$(PODS_ROOT)/panoplayer_ios_static/lib/IJKMediaFramework.framework/Headers" ',
+  'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/panoplayer_ios_static/lib/" "$(PODS_ROOT)/OpenCV/"',
+  'HEADER_SEARCH_PATHS' => '/usr/include/libxml2 "$(PODS_ROOT)/panoplayer_ios_static/lib/IJKMediaFramework.framework/Headers" "$(PODS_ROOT)/OpenCV/opencv2.framework/Header"',
   'CLANG_CXX_LANGUAGE_STANDARD' => 'c++11',
   'CLANG_CXX_LIBRARY' => 'libc++' }
   s.dependency  'SDWebImage', '~> 3.7'
