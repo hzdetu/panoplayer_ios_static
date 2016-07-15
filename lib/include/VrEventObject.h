@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Hotspot.h"
 
 
 @protocol VrEventTimerDelegate <NSObject>
@@ -30,5 +31,6 @@
 
 @property (nonatomic,weak)   id<VrEventTimerDelegate> delegate;
 
+@property (nonatomic,strong) Hotspot* hotspot;
 
 @end

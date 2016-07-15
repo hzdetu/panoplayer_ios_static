@@ -10,6 +10,7 @@
 #import "GLModel.h"
 #import "Texture.h"
 #import "Image.h"
+#import "BasePlayerMovieDecoder.h"
 
 #define COUNTX 160
 #define COUNTY 80
@@ -34,7 +35,7 @@
     
     GLuint points_bufid;
     GLuint spriteTexcoords_bufid;
-    
+    @public
     Texture *texture;
 }
 
@@ -46,5 +47,6 @@
 -(void)initTexCoords:(float)xRange :(float)yRange;
 -(void)setImage:(UIImage *)uiimg;
 -(void)setBuf:(CVPixelBufferRef)buf;
+-(void)setFrameSDL:(SDL_VoutOverlay*)frame force:(bool)force;
 -(void)setVoidBuf:(void *)buf width:(int)width height:(int)height channel:(int)channel force:(bool)force;
 @end

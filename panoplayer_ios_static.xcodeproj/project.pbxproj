@@ -1372,6 +1372,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/lib/include",
 					/usr/include/libxml2,
+					"$(PROJECT_DIR)/lib/IJKMediaFramework.framework/Headers",
 				);
 				INFOPLIST_FILE = panoplayer_ios_static/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1399,6 +1400,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/lib/include",
 					/usr/include/libxml2,
+					"$(PROJECT_DIR)/lib/IJKMediaFramework.framework/Headers",
 				);
 				INFOPLIST_FILE = panoplayer_ios_static/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

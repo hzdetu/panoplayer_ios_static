@@ -13,6 +13,8 @@
 
 @interface GLESRenderer : NSObject
 
+@property (nonatomic) EAGLContext *context;
+
 - (BOOL)createFramebuffer:(CAEAGLLayer*)layer;
 - (void)destroyFramebuffer;
 - (void)setFramebuffer:(CAEAGLLayer*)layer;

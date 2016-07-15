@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <GLKit/GLKit.h>
-
+#import "BasePlayerMovieDecoder.h"
+#import "GLPanoPlayerCore.h"
 
 #define DEVICE_SPHERE800 1
+
+#define DEVICE_SPHERES 11
+
+#define DEVICE_482 101
 
 #define DEVICE_TWOSPHERE 2000
 
@@ -25,6 +30,8 @@
 
 @property NSString* type;// cube sphere video
 @property NSString* url; //地址 -
+
+@property bool is_hardware;
 
 
 //设备相关
@@ -82,9 +89,12 @@
 
 @property int mediacodec;
 
+@property NSString* biaoding; //标定值
+
 
 -(void)deviceFilter;
 -(void)deviceFilterWithVoid:(void *)data;
+-(void)deviceFilterWithSDL:(SDL_VoutOverlay*)frame;
 -(void)deviceFilterWithUIImage:(UIImage*)img;
 -(void)deviceFilterWithBuffer:(CVPixelBufferRef)buffer;
 

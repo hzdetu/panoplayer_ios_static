@@ -10,5 +10,4 @@
 
 @interface GLES2Renderer : GLESRenderer
 
-
 @end

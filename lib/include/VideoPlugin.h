@@ -22,4 +22,12 @@
 -(void)pause;
 -(void)stop;
 
+//录制
+-(Boolean)recordFile:(NSString*)savePath is2to1:(Boolean)is2to1;
+
+//转2:1视频
+-(Boolean)tranceVideo:(NSString*)inputFilePath outputPath:(NSString*)outputFilePath finishBlock:(void(^)(Boolean result))block;
+
+-(void)stopRecord;
+
 @end

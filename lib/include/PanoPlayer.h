@@ -12,6 +12,7 @@
 #import "PanoramaData.h"
 #import "VrEventObjectManager.h"
 #import "ManagerData.h"
+#import "HotpotManager.h"
 
 
 
@@ -98,9 +99,14 @@ typedef enum {
 
 -(UIImage *)getScreenShot;
 
+- (GLubyte* )getScreenShot2:(Boolean)is2to1;
 
+- (UIImage *)getScreenShot3;
 
 -(VrEventObjectManager*)getVrEventManager;
+-(HotpotManager*)getHotManager;
+
+
 
 
 @end

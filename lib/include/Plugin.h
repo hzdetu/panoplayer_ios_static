@@ -14,6 +14,8 @@
 {
     __weak PanoPlayer* panoplayer;
     __weak PanoramaData* panoramaData;
+    @public
+        GLModel*  model;
     
 }
 

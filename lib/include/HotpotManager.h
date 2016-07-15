@@ -6,11 +6,11 @@
 //  Copyright (c) 2015年 apple. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "PanoPlayer.h"
+
 #import "Hotspot.h"
-#import "HotpotView.h"
 #import "PanoramaData.h"
+
+@class PanoPlayer;
 
 @interface HotpotManager :NSObject{
     __weak PanoPlayer *panoplayer;

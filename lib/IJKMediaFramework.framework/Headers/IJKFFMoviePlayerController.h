@@ -21,9 +21,9 @@
  */
 
 #import "IJKMediaPlayback.h"
+#import "IJKFFMonitor.h"
 #import "IJKFFOptions.h"
-
-
+#import "ijksdl.h"
 
 // media meta
 #define k_IJKM_KEY_FORMAT         @"format"
@@ -56,14 +56,6 @@
 
 #define kk_IJKM_KEY_STREAMS       @"streams"
 
-typedef struct framebuffer {
-    UInt8* frame;
-    int width;
-    int height;
-    int channel;
-    int format;
-}sframebuffer;
-
 typedef enum IJKLogLevel {
     k_IJK_LOG_UNKNOWN = 0,
     k_IJK_LOG_DEFAULT = 1,
@@ -90,11 +82,7 @@ typedef enum IJKLogLevel {
 - (void)pause;
 - (void)stop;
 - (BOOL)isPlaying;
-
-- (NSDictionary*)getMediaDicMeta2;
-- (sframebuffer)getCurrentFrame2;
-- (sframebuffer)getCurrentFrame;
-
+-(SDL_VoutOverlay*)getCurrentFrame3;
 
 - (void)setPauseInBackground:(BOOL)pause;
 - (BOOL)isVideoToolboxOpen;
@@ -135,6 +123,13 @@ typedef enum IJKLogLevel {
 @property (nonatomic, retain) id<IJKMediaUrlOpenDelegate> tcpOpenDelegate;
 @property (nonatomic, retain) id<IJKMediaUrlOpenDelegate> httpOpenDelegate;
 @property (nonatomic, retain) id<IJKMediaUrlOpenDelegate> liveOpenDelegate;
+
+@property (nonatomic, retain) id<IJKMediaNativeInvokeDelegate> nativeInvokeDelegate;
+
+- (void)didShutdown;
+
+#pragma mark KVO properties
+@property (nonatomic, readonly) IJKFFMonitor *monitor;
 
 @end
 

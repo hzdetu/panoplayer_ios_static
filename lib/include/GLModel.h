@@ -72,6 +72,8 @@ struct matrixf16 {
     GLuint misforwardHandle;
     int isforward;
     
+    GLuint isYuv420Handle;
+    
     
     GLKMatrix4 projectionMatrix;
     GLKMatrix4 modelMatrix;
@@ -96,6 +98,8 @@ struct matrixf16 {
 
 @property bool isvisible;
 
+@property bool isRenderYUV420;
+
 
 
 -(CGPoint)calWinPointByAngleXLeftEye:(float)x angleY:(float)y viewsize:(CGSize)viewsize;
@@ -115,5 +119,6 @@ struct matrixf16 {
 -(void)loadShader;
 
 -(PanoramaData *)getPanoData;
+-(void)loadmodel;
 
 @end

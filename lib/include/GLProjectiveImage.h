@@ -24,4 +24,7 @@
 -(UIImage*)convertPanoUIImage:(UIImage*)fisheyeimage deviceid:(int)deviceid;
 -(UIImage*)convertPanoUIImage:(UIImage*)fisheyeimage deviceid:(int)deviceid iscrop:(bool)iscrop;
 -(UIImage*)convertPanoUIImage:(UIImage*)fisheyeimage imgdata:(Image*)imgdata iscrop:(bool)iscrop;
+
+//只找一次圆
+-(UIImage*)convertPanoUIImage2:(UIImage*)fisheyeimage imgdata:(Image*)imgdata iscrop:(bool)iscrop;
 @end

@@ -1,8 +1,18 @@
 precision mediump float;
 uniform sampler2D u_Texture;
-varying vec2 v_TexCoordinate;
 
+
+//uniform sampler2D SamplerUV;
+
+varying vec2 v_TexCoordinate;
 uniform bool forward;
+uniform bool isYuv420;
+
+
+uniform sampler2D SamplerY;
+uniform sampler2D SamplerU;
+uniform sampler2D SamplerV;
+uniform mat3 colorConversionMatrix;
 void main(){
     
     if(forward)
@@ -20,6 +30,19 @@ void main(){
         }
     }
     else{
-        gl_FragColor = texture2D(u_Texture, v_TexCoordinate);
+        if(!isYuv420){
+            gl_FragColor = texture2D(u_Texture, v_TexCoordinate);
+        }else{
+            mediump vec3 yuv;
+            lowp vec3 rgb;
+            
+            // Subtract constants to map the video range start at 0
+            yuv.x = (texture2D(SamplerY, v_TexCoordinate).r - (16.0/255.0));
+            yuv.y = (texture2D(SamplerU, v_TexCoordinate).r - 0.5);
+            yuv.z = (texture2D(SamplerV, v_TexCoordinate).r - 0.5);
+            rgb = colorConversionMatrix * yuv;
+            gl_FragColor = vec4(rgb,1);
+        }
+        
     }
 }
