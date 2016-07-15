@@ -22,6 +22,5 @@ Pod::Spec.new do |s|
   'CLANG_CXX_LANGUAGE_STANDARD' => 'c++11',
   'CLANG_CXX_LIBRARY' => 'libc++' }
   s.dependency  'SDWebImage', '~> 3.7'
-  s.dependency  'AFNetworking', '~> 2.0'
   s.dependency  'OpenCV', '2.4.9'
 end
